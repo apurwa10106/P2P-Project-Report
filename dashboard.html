@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 id="title"></h1>
+
+<div class="grid">
+
+<div class="card"><h3>Monetization</h3><p id="monetization"></p></div>
+<div class="card"><h3>Pricing</h3><p id="pricing"></p></div>
+<div class="card"><h3>Target</h3><p id="goal"></p></div>
+
+<div class="card">
+<h3>Companies</h3>
+<ul id="companies"></ul>
+</div>
+
+</div>
+
+<a href="resume.html">
+<button class="btn">Next →</button>
+</a>
+
+<script>
+let companies = JSON.parse(localStorage.getItem("companies")) || [];
+
+document.getElementById("title").innerText = localStorage.getItem("title");
+document.getElementById("monetization").innerText = localStorage.getItem("monetization");
+document.getElementById("pricing").innerText = localStorage.getItem("pricing");
+document.getElementById("goal").innerText = "₹" + localStorage.getItem("goal");
+
+let list = document.getElementById("companies");
+
+companies.forEach((c,i)=>{
+setTimeout(()=>{
+let li=document.createElement("li");
+li.innerText="🟢 "+c;
+list.appendChild(li);
+}, i*200);
+});
+</script>
+
+</body>
+</html>
