@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Profile Insights</h1>
+
+<div class="grid">
+
+<div class="card"><h3>Score</h3><p id="score"></p></div>
+<div class="card"><h3>Role</h3><p id="role"></p></div>
+<div class="card"><h3>Level</h3><p id="level"></p></div>
+
+</div>
+
+<script>
+let score=parseInt(localStorage.getItem("score"));
+let role=localStorage.getItem("role");
+
+document.getElementById("score").innerText=score;
+document.getElementById("role").innerText=role;
+
+let level="Beginner";
+if(score>70) level="Advanced";
+else if(score>50) level="Intermediate";
+
+document.getElementById("level").innerText=level;
+</script>
+
+</body>
+</html>
