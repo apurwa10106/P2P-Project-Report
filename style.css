@@ -1,0 +1,76 @@
+body{
+margin:0;
+font-family:Poppins;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+text-align:center;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.headline span{
+color:#8b5cf6;
+text-shadow:0 0 10px #8b5cf6;
+}
+
+/* GLASS */
+.glass{
+background:#1e293b;
+padding:20px;
+margin:20px auto;
+width:300px;
+border-radius:15px;
+box-shadow:0 0 20px #8b5cf6;
+}
+
+/* INPUT */
+input,textarea,select{
+width:90%;
+margin:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+}
+
+/* BUTTON */
+.btn{
+background:linear-gradient(45deg,#3b82f6,#8b5cf6);
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 15px #8b5cf6;
+}
+
+/* GRID */
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.card{
+background:#1e293b;
+margin:10px;
+padding:15px;
+border-radius:10px;
+width:200px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
