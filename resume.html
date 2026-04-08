@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resume Analyzer</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+
+<body>
+
+<h1>Resume Analyzer</h1>
+
+<div class="glass">
+
+<input type="file" id="pdfFile">
+<button class="btn" onclick="analyzePDF()">Analyze</button>
+
+<div id="output"></div>
+
+<a href="profile.html">
+<button class="btn">Next →</button>
+</a>
+
+</div>
+
+<script>
+async function analyzePDF(){
+const file=document.getElementById("pdfFile").files[0];
+if(!file){alert("Upload PDF");return;}
+
+const reader=new FileReader();
+
+reader.onload=async function(){
+const pdf=await pdfjsLib.getDocument(new Uint8Array(this.result)).promise;
+let text="";
+
+for(let i=1;i<=pdf.numPages;i++){
+let page=await pdf.getPage(i);
+let content=await page.getTextContent();
+content.items.forEach(item=>text+=item.str+" ");
+}
